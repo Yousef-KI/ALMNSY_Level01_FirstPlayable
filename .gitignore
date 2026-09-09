@@ -5,3 +5,5 @@ Saved/
 .vs/
 .vscode/
 *.sln
+__pycache__/
+*.pyc

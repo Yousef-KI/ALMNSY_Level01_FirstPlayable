@@ -5,6 +5,11 @@
 	"Description": "",
 	"Modules": [
 		{
+			"Name": "ALMNSYEditorTools",
+			"Type": "Editor",
+			"LoadingPhase": "Default"
+		},
+		{
 			"Name": "ALMNSY_Level01",
 			"Type": "Runtime",
 			"LoadingPhase": "Default",
@@ -16,6 +21,16 @@
 		}
 	],
 	"Plugins": [
+		{
+			"Name": "PythonScriptPlugin",
+			"Enabled": true,
+			"TargetAllowList": ["Editor"]
+		},
+		{
+			"Name": "EditorScriptingUtilities",
+			"Enabled": true,
+			"TargetAllowList": ["Editor"]
+		},
 		{
 			"Name": "ModelingToolsEditorMode",
 			"Enabled": true,
