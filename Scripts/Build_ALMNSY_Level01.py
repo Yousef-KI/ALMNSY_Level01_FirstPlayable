@@ -112,8 +112,12 @@ def material(name, tex=None, color=(1,1,1), rough=.8, metal=0, world=False, emis
             e=MEL.create_material_expression(mat,cls)
             for k,v in kwargs.items(): e.set_editor_property(k,v)
             return e
-        def connect(a,b,pin,output=''):
-            require(MEL.connect_material_expressions(a,output,b,pin),f'Material link failed: {name}/{pin}')
+
+        def connect(a, b, pin, output=''):
+            ok = MEL.connect_material_expressions(a, output, b, pin)
+            if not ok:
+                ok = MEL.connect_material_expressions(a, output, b, '')
+            require(ok, f'Material link failed: {name}/{pin}')
         def binary(cls,a,b):
             e=expr(cls); connect(a,e,'A'); connect(b,e,'B'); return e
         def mask(a,channels):
@@ -190,7 +194,11 @@ def materials():
 
 
 def instance(mesh, material_name, position, scale=(1,1,1), rotation=(0,0,0), collision=True):
-    t=ue.MathLibrary.make_transform(vec(position),rot(rotation),vec(scale))
+    t = ue.Transform(
+        location=vec(position),
+        rotation=rot(rotation),
+        scale=vec(scale)
+    )
     BATCHES[(mesh,material_name,collision)].append(t)
     COUNT['instances']+=1
 

@@ -103,7 +103,7 @@ void AALMNSYFighter::BeginPlay()
 void AALMNSYFighter::Equip()
 {
     bArmed = true;
-    if (auto* Mesh = LoadObject<UStaticMesh>(nullptr, TEXT("/Game/ALMNSY/Environment/Props/SM_TemporarySaif"))) Sword->SetStaticMesh(Mesh);
+    if (auto* SwordMesh = LoadObject<UStaticMesh>(nullptr, TEXT("/Game/ALMNSY/Environment/Props/SM_TemporarySaif"))) Sword->SetStaticMesh(SwordMesh);
     if (auto* M = LoadObject<UMaterialInterface>(nullptr, TEXT("/Game/ALMNSY/Materials/MI_AgedMetal"))) Sword->SetMaterial(0, M);
     Sword->SetVisibility(true);
 }
@@ -165,7 +165,7 @@ void AALMNSYFighter::Tick(float Dt)
                 if (Locomotion)
                     for (int32 Axis = 0; Axis < 3; ++Axis)
                         if (Locomotion->GetBlendParameter(Axis).DisplayName.Contains(TEXT("Speed"))) Input[Axis] = GetVelocity().Size2D();
-                Anim->SetBlendSpaceInput(Input);
+                Anim->SetBlendSpacePosition(Input);
             }
         }
         TellLight->SetIntensity(Now < HitFlashUntil ? 900.f : 0.f);
@@ -267,7 +267,7 @@ void AALMNSYFighter::Think(float Now)
     else AI->MoveToActor(Player, 55.f, true, true, true, nullptr, true);
 }
 
-float AALMNSYFighter::TakeDamage(float Damage, const FDamageEvent& Event, AController* Instigator, AActor* Causer)
+float AALMNSYFighter::TakeDamage(float Damage, const FDamageEvent& Event, AController* EventInstigator, AActor* Causer)
 {
     const float Now = GetWorld()->GetTimeSeconds();
     if (bDead || bStoryCharacter || Damage <= 0.f || Now < InvulnerableUntil) return 0.f;

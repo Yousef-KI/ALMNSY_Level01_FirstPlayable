@@ -3,7 +3,7 @@
 #include "AssetRegistry/AssetRegistryModule.h"
 #include "Builders/CubeBuilder.h"
 #include "Editor.h"
-#include "Engine/Model.h"
+#include "Model.h"
 #include "Engine/StaticMesh.h"
 #include "Engine/StaticMeshSourceData.h"
 #include "Engine/World.h"
