@@ -395,7 +395,7 @@ def dressing():
     moon.set_actor_scale3d(vec((14,14,14)))
 
 
-def gameplay():
+def gameplay(fighter_override=None):
     def bp(name,folder,parent,defaults):
         path=f'{BASE}/Blueprints/{folder}/{name}'
         asset=ue.load_asset(path)
@@ -407,7 +407,7 @@ def gameplay():
             for k,v in defaults.items(): obj.set_editor_property(k,v)
             ue.BlueprintEditorLibrary.compile_blueprint(asset);save(asset)
         return asset.generated_class()
-    fighter=ue.load_class(None,'/Script/ALMNSY_Level01.ALMNSYFighter')
+    fighter=fighter_override or ue.load_class(None,'/Script/ALMNSY_Level01.ALMNSYFighter')
     gm=ue.load_class(None,'/Script/ALMNSY_Level01.ALMNSYChapterGameMode')
     require(fighter and gm,'Compile ALMNSY_Level01Editor before running this script.')
     hero=bp('BP_ChapterPlayer','Player',fighter,{})
@@ -502,8 +502,9 @@ def build():
     ue.log(f'ALMNSY generated: {MAP}. Press Play. Report: {REPORT}')
 
 
-try:
-    build()
-except Exception:
-    ue.log_error('ALMNSY generation did not finish. See traceback below; no playtest success is claimed.\n'+traceback.format_exc())
-    raise
+if __name__ == '__main__':
+    try:
+        build()
+    except Exception:
+        ue.log_error('ALMNSY generation did not finish. See traceback below; no playtest success is claimed.\n'+traceback.format_exc())
+        raise
