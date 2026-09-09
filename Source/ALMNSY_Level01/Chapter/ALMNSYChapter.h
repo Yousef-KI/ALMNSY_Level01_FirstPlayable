@@ -59,17 +59,18 @@ public:
     UPROPERTY(EditDefaultsOnly, Category="Animation") TObjectPtr<UAnimSequence> DeathAnimation;
     UPROPERTY(EditDefaultsOnly, Category="Animation") TObjectPtr<UAnimSequence> IdleAnimation;
     UPROPERTY(EditDefaultsOnly, Category="Animation") TObjectPtr<UAnimSequence> FallAnimation;
-    void Equip();
-    void Restore(const FTransform& Transform, bool Armed);
-    void Attack();
-    void Evade();
-    void Interact();
-    void SprintOn();
-    void SprintOff();
+    virtual void Equip();
+    virtual void Restore(const FTransform& Transform, bool Armed);
+    virtual void Attack();
+    virtual void Evade();
+    virtual void Interact();
+    virtual void SprintOn();
+    virtual void SprintOff();
+protected:
+    virtual void AnimateLocomotion();
 private:
     void StartAttack();
     void TraceAttack();
-    void AnimateLocomotion();
     void Think(float Now);
     void Die();
     float AttackStarted = -100.f;
@@ -136,7 +137,9 @@ public:
     virtual void BeginPlay() override;
     virtual void Tick(float DeltaSeconds) override;
     static AALMNSYChapterDirector* Find(const UWorld* World);
-    static FString SaveSlot();
+    FString SaveSlot() const;
+    // Default preserves the working v02 slot; v03 opts into its own save.
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Chapter") FName SaveNamespace = "v01";
     bool Cleared(int32 Group) const;
     void GuardFell(FName Id);
     void Checkpoint(const FTransform& Transform);
@@ -172,6 +175,7 @@ private:
     UPROPERTY() TObjectPtr<UTextBlock> PromptText;
     UPROPERTY() TObjectPtr<UTextBlock> StateText;
     UPROPERTY() TObjectPtr<UProgressBar> HealthBar;
+    UPROPERTY() TObjectPtr<UTextBlock> ControlsText;
 };
 
 UCLASS()

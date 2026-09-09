@@ -1,4 +1,5 @@
 #include "Chapter/ALMNSYChapter.h"
+#include "Chapter/V03/ALMNSYFighterV03.h"
 #include "Blueprint/WidgetTree.h"
 #include "Components/CanvasPanel.h"
 #include "Components/CanvasPanelSlot.h"
@@ -40,8 +41,9 @@ TSharedRef<SWidget> UALMNSYChapterHUD::RebuildWidget()
     PromptText->SetJustification(ETextJustify::Center);
     StateText = Text(TEXT(""), FVector2D::ZeroVector, FVector2D(850, 200), 30, FVector2D(.5f, .5f));
     StateText->SetJustification(ETextJustify::Center);
-    Text(TEXT("WASD move · Mouse look · Space jump · Shift run · LMB attack · Ctrl evade · E interact · Esc pause"),
-        FVector2D(0, -20), FVector2D(1080, 28), 13, FVector2D(.5f, 1.f))->SetJustification(ETextJustify::Center);
+    ControlsText = Text(TEXT("WASD move · Mouse look · Space jump · Shift run · LMB attack · Ctrl evade · E interact · Esc pause"),
+        FVector2D(0, -20), FVector2D(1080, 28), 13, FVector2D(.5f, 1.f));
+    ControlsText->SetJustification(ETextJustify::Center);
     SetVisibility(ESlateVisibility::HitTestInvisible);
     return Super::RebuildWidget();
 }
@@ -51,6 +53,8 @@ void UALMNSYChapterHUD::NativeTick(const FGeometry& Geometry, float Dt)
     auto* D = AALMNSYChapterDirector::Find(GetWorld());
     auto* P = Cast<AALMNSYFighter>(GetOwningPlayerPawn());
     if (!D || !P || !HealthBar) return;
+    if (Cast<AALMNSYFighterV03>(P) && ControlsText)
+        ControlsText->SetText(FText::FromString(TEXT("WASD move · Shift run · LMB / RB sword · Ctrl / B dodge · RMB / LB guard & parry · E / X interact · Esc pause")));
     HealthBar->SetPercent(P->MaxHealth > 0 ? P->Health / P->MaxHealth : 0);
     ObjectiveText->SetText(D->Objective());
     SubtitleText->SetText(GetWorld()->GetTimeSeconds() < D->SubtitleUntil ? D->Subtitle : FText::GetEmpty());

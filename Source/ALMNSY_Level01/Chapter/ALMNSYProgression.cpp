@@ -19,7 +19,8 @@ AALMNSYChapterDirector::AALMNSYChapterDirector()
     PrimaryActorTick.TickInterval = .2f;
     RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("ChapterRoot"));
 }
-FString AALMNSYChapterDirector::SaveSlot() { return TEXT("ALMNSY_Level01_v01_Checkpoint"); }
+FString AALMNSYChapterDirector::SaveSlot() const
+{ return FString::Printf(TEXT("ALMNSY_Level01_%s_Checkpoint"), *SaveNamespace.ToString()); }
 AALMNSYChapterDirector* AALMNSYChapterDirector::Find(const UWorld* World)
 {
     for (TActorIterator<AALMNSYChapterDirector> It(World); It; ++It) return *It;

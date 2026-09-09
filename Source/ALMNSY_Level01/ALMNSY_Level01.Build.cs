@@ -20,7 +20,8 @@ public class ALMNSY_Level01 : ModuleRules
 			"UMG",
 			"Slate",
 			"SlateCore",
-			"NavigationSystem"
+			"NavigationSystem",
+			"AnimGraphRuntime"
 		});
 
 		PrivateDependencyModuleNames.AddRange(new string[] { });
