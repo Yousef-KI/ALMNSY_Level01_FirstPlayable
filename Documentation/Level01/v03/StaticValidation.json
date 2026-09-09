@@ -1,0 +1,250 @@
+{
+  "status": "STATICALLY_VERIFIED_NOT_UNREAL_PLAYTESTED",
+  "base_commit": "639c17d1811b0ea7a869c906fa05bfeeb4901b00",
+  "source_checks": {
+    "protected_v02_paths_unchanged": true,
+    "python_syntax": "passed",
+    "compatibility_regressions_checked": true
+  },
+  "geometry": {
+    "SM_Bowl": {
+      "triangles": 240,
+      "extent_cm": [
+        36.0,
+        36.0,
+        17
+      ],
+      "signed_volume_cm3": 4315.03
+    },
+    "SM_Candle": {
+      "triangles": 144,
+      "extent_cm": [
+        8.0,
+        8.0,
+        26
+      ],
+      "signed_volume_cm3": 1259.93
+    },
+    "SM_CandleHolder": {
+      "triangles": 288,
+      "extent_cm": [
+        24.0,
+        24.0,
+        38
+      ],
+      "signed_volume_cm3": 6358.67
+    },
+    "SM_CarvedPillar": {
+      "triangles": 2272,
+      "extent_cm": [
+        226.0,
+        226.0,
+        1000
+      ],
+      "signed_volume_cm3": 19043268.86
+    },
+    "SM_Chair": {
+      "triangles": 508,
+      "extent_cm": [
+        57.0,
+        58.0,
+        144.5
+      ],
+      "signed_volume_cm3": 68211.49
+    },
+    "SM_Chandelier": {
+      "triangles": 784,
+      "extent_cm": [
+        200.0,
+        200.0,
+        46.0
+      ],
+      "signed_volume_cm3": 109128.64
+    },
+    "SM_ConstructionBlock": {
+      "triangles": 12,
+      "extent_cm": [
+        100.0,
+        100.0,
+        100.0
+      ],
+      "signed_volume_cm3": 1000000.0
+    },
+    "SM_Cornice": {
+      "triangles": 44,
+      "extent_cm": [
+        100.0,
+        100.0,
+        30.0
+      ],
+      "signed_volume_cm3": 296004.0
+    },
+    "SM_EightPointSeal": {
+      "triangles": 96,
+      "extent_cm": [
+        92.0,
+        92.0,
+        9.0
+      ],
+      "signed_volume_cm3": 25348.95
+    },
+    "SM_Flame": {
+      "triangles": 96,
+      "extent_cm": [
+        6.0,
+        6.0,
+        17
+      ],
+      "signed_volume_cm3": 179.1
+    },
+    "SM_Goblet": {
+      "triangles": 432,
+      "extent_cm": [
+        20.0,
+        20.0,
+        31
+      ],
+      "signed_volume_cm3": 2660.66
+    },
+    "SM_Lattice": {
+      "triangles": 144,
+      "extent_cm": [
+        107.0,
+        14.0,
+        110.0
+      ],
+      "signed_volume_cm3": 73160.0
+    },
+    "SM_MemoryPedestal": {
+      "triangles": 288,
+      "extent_cm": [
+        108.0,
+        108.0,
+        105
+      ],
+      "signed_volume_cm3": 493048.21
+    },
+    "SM_Plate": {
+      "triangles": 240,
+      "extent_cm": [
+        36.0,
+        36.0,
+        6
+      ],
+      "signed_volume_cm3": 3067.52
+    },
+    "SM_PointedArch": {
+      "triangles": 1188,
+      "extent_cm": [
+        786.5999999999999,
+        201.0,
+        803.0
+      ],
+      "signed_volume_cm3": 26786621.35
+    },
+    "SM_StoneBlock": {
+      "triangles": 44,
+      "extent_cm": [
+        100.0,
+        100.0,
+        100.0
+      ],
+      "signed_volume_cm3": 994744.0
+    },
+    "SM_Storybook": {
+      "triangles": 12,
+      "extent_cm": [
+        45.0,
+        34.0,
+        6.0
+      ],
+      "signed_volume_cm3": 9180.0
+    },
+    "SM_Table": {
+      "triangles": 72,
+      "extent_cm": [
+        100.0,
+        100.0,
+        106.0
+      ],
+      "signed_volume_cm3": 216768.0
+    },
+    "SM_TemporarySaif": {
+      "triangles": 236,
+      "extent_cm": [
+        22.15,
+        4.0,
+        100.0
+      ],
+      "signed_volume_cm3": 811.97
+    },
+    "SM_Urn": {
+      "triangles": 576,
+      "extent_cm": [
+        76.0,
+        76.0,
+        100
+      ],
+      "signed_volume_cm3": 232006.43
+    },
+    "SM_VistaDome": {
+      "triangles": 384,
+      "extent_cm": [
+        360.0,
+        360.0,
+        130
+      ],
+      "signed_volume_cm3": 9134731.32
+    },
+    "SM_VistaRidge": {
+      "triangles": 108,
+      "extent_cm": [
+        900,
+        240.0,
+        402.5756804843946
+      ],
+      "signed_volume_cm3": 46020993.63
+    },
+    "SM_WoodenHorse": {
+      "triangles": 84,
+      "extent_cm": [
+        34.0,
+        9.0,
+        46.0
+      ],
+      "signed_volume_cm3": 5980.0
+    },
+    "SM_WovenCloth": {
+      "triangles": 192,
+      "extent_cm": [
+        100.0,
+        100.0,
+        3.5407138230707176
+      ],
+      "signed_volume_cm3": 527.52
+    }
+  },
+  "spatial": {
+    "reachable_cells": 25482,
+    "checked_destinations": 20,
+    "inward_facing_chairs": 16
+  },
+  "instances": 2168,
+  "environment_lights": 60,
+  "physics_props": 31,
+  "native_combat_rules": "passed: native rule header + sword choreography at 12/30/60/144 fps",
+  "requires_local_ue58": [
+    "UHT/C++ project build",
+    "material shader compilation",
+    "v03 editor generation",
+    "skeletal IK and sword grip",
+    "actual Chaos/NavMesh traversal",
+    "sword contact at 30/60 FPS",
+    "dodge collision/cancel",
+    "frontal and rear block/parry",
+    "death/checkpoint/relaunch/save isolation",
+    "lighting/exposure/FPS",
+    "full route/completion",
+    "packaged build"
+  ]
+}

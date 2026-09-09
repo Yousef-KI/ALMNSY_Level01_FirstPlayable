@@ -1,5 +1,11 @@
 # ALMNSY — Chapter I: The House That Remembers
 
+**v03 refinement:** see [the implementation and testing report](Documentation/Level01/v03/README_v03.md).
+Run `Scripts/BuildAndOpen_v03.ps1` to generate/open the separate experiment. The
+user-verified v02 assets and startup configuration are preserved. v03 still needs
+local UE 5.8 compilation, generation and playtesting. The original v01 instructions
+below are retained as implementation history.
+
 **Implemented source + automated editor assembly for the existing UE 5.8 project.**
 The editor has not been run in the authoring environment. This is not a claim of
 a compiled, packaged or playtested game. The map and new `.uasset` files are
