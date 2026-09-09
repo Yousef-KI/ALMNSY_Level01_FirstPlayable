@@ -1,0 +1,124 @@
+{
+  "status": "STATIC_CHECKS_PASSED_NOT_ENGINE_TESTED",
+  "mesh_count": 19,
+  "meshes": {
+    "SM_Bowl": {
+      "vertices": 528,
+      "triangles": 240
+    },
+    "SM_Candle": {
+      "vertices": 336,
+      "triangles": 144
+    },
+    "SM_CandleHolder": {
+      "vertices": 624,
+      "triangles": 288
+    },
+    "SM_CarvedPillar": {
+      "vertices": 3392,
+      "triangles": 1664
+    },
+    "SM_Chair": {
+      "vertices": 168,
+      "triangles": 84
+    },
+    "SM_ConstructionBlock": {
+      "vertices": 24,
+      "triangles": 12
+    },
+    "SM_EightPointSeal": {
+      "vertices": 32,
+      "triangles": 16
+    },
+    "SM_Flame": {
+      "vertices": 240,
+      "triangles": 96
+    },
+    "SM_Goblet": {
+      "vertices": 912,
+      "triangles": 432
+    },
+    "SM_MemoryPedestal": {
+      "vertices": 624,
+      "triangles": 288
+    },
+    "SM_Plate": {
+      "vertices": 528,
+      "triangles": 240
+    },
+    "SM_PointedArch": {
+      "vertices": 816,
+      "triangles": 408
+    },
+    "SM_StoneBlock": {
+      "vertices": 56,
+      "triangles": 28
+    },
+    "SM_Storybook": {
+      "vertices": 24,
+      "triangles": 12
+    },
+    "SM_Table": {
+      "vertices": 144,
+      "triangles": 72
+    },
+    "SM_TemporarySaif": {
+      "vertices": 240,
+      "triangles": 120
+    },
+    "SM_Urn": {
+      "vertices": 1200,
+      "triangles": 576
+    },
+    "SM_WoodenHorse": {
+      "vertices": 168,
+      "triangles": 84
+    },
+    "SM_WovenCloth": {
+      "vertices": 384,
+      "triangles": 192
+    }
+  },
+  "instance_count": 1569,
+  "light_count": 58,
+  "physics_props": 31,
+  "reachable_grid_cells": 27042,
+  "references": {
+    "existing_dependencies": [
+      "/Game/Characters/Mannequins/Anims/Death/MM_Death_Front_01",
+      "/Game/Characters/Mannequins/Anims/Rifle/HitReact/MM_HitReact_Front_Lgt_01",
+      "/Game/Characters/Mannequins/Anims/Unarmed/Attack/MM_Attack_01",
+      "/Game/Characters/Mannequins/Anims/Unarmed/Attack/MM_Attack_02",
+      "/Game/Characters/Mannequins/Anims/Unarmed/Attack/MM_Attack_03",
+      "/Game/Characters/Mannequins/Anims/Unarmed/BS_Idle_Walk_Run",
+      "/Game/Characters/Mannequins/Anims/Unarmed/Jump/MM_Fall_Loop",
+      "/Game/Characters/Mannequins/Anims/Unarmed/MM_Idle",
+      "/Game/Characters/Mannequins/Meshes/SKM_Manny_Simple",
+      "/Game/Input/Actions/IA_Jump",
+      "/Game/Input/Actions/IA_Look",
+      "/Game/Input/Actions/IA_MouseLook",
+      "/Game/Input/Actions/IA_Move",
+      "/Game/Input/IMC_Default",
+      "/Game/Input/IMC_MouseLook"
+    ],
+    "generated_runtime_dependencies": [
+      "/Game/ALMNSY/Audio/S_HouseAmbience",
+      "/Game/ALMNSY/Audio/S_Impact",
+      "/Game/ALMNSY/Audio/S_Step",
+      "/Game/ALMNSY/Audio/S_Swing",
+      "/Game/ALMNSY/Environment/Props/SM_TemporarySaif",
+      "/Game/ALMNSY/Materials/MI_AgedMetal",
+      "/Game/ALMNSY/Materials/MI_Guard_Bronze",
+      "/Game/ALMNSY/Materials/MI_Guard_Charcoal"
+    ]
+  },
+  "unverified": [
+    "UnrealHeaderTool and C++ compilation",
+    "Editor Python API execution",
+    "NavMesh build",
+    "Actual Chaos collision",
+    "PIE checkpoint/death/completion",
+    "visuals and FPS",
+    "packaged build"
+  ]
+}

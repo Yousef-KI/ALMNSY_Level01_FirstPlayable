@@ -262,7 +262,9 @@ void AALMNSYFighter::Think(float Now)
             Attack();
         }
     }
-    else AI->MoveToActor(Player, 115.f, true, true, true, nullptr, true);
+    // Path following adds capsule radii to this distance. Keep its stopping
+    // distance inside the weak guard's 185cm attack threshold.
+    else AI->MoveToActor(Player, 55.f, true, true, true, nullptr, true);
 }
 
 float AALMNSYFighter::TakeDamage(float Damage, const FDamageEvent& Event, AController* Instigator, AActor* Causer)

@@ -20,7 +20,7 @@ IMPLEMENT_MODULE(FDefaultModuleImpl, ALMNSYEditorTools)
 UStaticMesh* UALMNSYEditorLibrary::CreateMesh(const FString& PackagePath, const TArray<FVector>& Vertices,
     const TArray<int32>& Triangles, const TArray<FVector2D>& UVs, bool bComplexCollision)
 {
-    // Never mutate a prior asset. Builder selects a fresh version namespace on every run.
+    // Never mutate a prior asset. New map versions reuse the existing kit.
     if (!PackagePath.StartsWith(TEXT("/Game/ALMNSY/")) || Vertices.Num() != UVs.Num() || Triangles.Num() % 3 != 0) return nullptr;
     const FString AssetName = FPackageName::GetLongPackageAssetName(PackagePath);
     if (LoadObject<UStaticMesh>(nullptr, *(PackagePath + TEXT(".") + AssetName))) return nullptr;
