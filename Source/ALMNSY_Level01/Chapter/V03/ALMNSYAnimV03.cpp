@@ -106,9 +106,16 @@ namespace
             Hand=FMath::VInterpTo(Hand,FVector(Pose.Hand.X,Pose.Hand.Y,Pose.Hand.Z)*Scale,Dt,32.f);
             Blade=FMath::VInterpTo(Blade,FVector(Pose.Blade.X,Pose.Blade.Y,Pose.Blade.Z),Dt,32.f).GetSafeNormal();
             Torso=FMath::FInterpTo(Torso,Pose.Torso,Dt,22.f);
-            const FAnimationUpdateContext Context(this,Dt);
+            
+        }
+        virtual void UpdateAnimationNode(const FAnimationUpdateContext& Context) override
+        {
             MoveNode.Update_AnyThread(Context);
-            if(ActionAsset && ActionAlpha>.001f)ActionNode.Update_AnyThread(Context);
+
+            if (ActionAsset && ActionAlpha > .001f)
+            {
+                ActionNode.Update_AnyThread(Context);
+            }
         }
         virtual bool Evaluate(FPoseContext& Output) override
         {

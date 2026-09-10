@@ -70,7 +70,7 @@ def material(name,tex=None,color=(1,1,1),rough=.8,metal=0,world=False,emission=0
     def link(a,d,pin,output=''):
         ok=mel.connect_material_expressions(a,output,d,pin)
         # Retain the proven 5.8 unnamed-unary-input fallback. Never redirect B to A.
-        if not ok and pin in ('Input','Coordinates'):ok=mel.connect_material_expressions(a,output,d,'')
+        if not ok and pin in ('Input','Coordinates','Position'):ok=mel.connect_material_expressions(a,output,d,'')
         b.require(ok,f'v03 material link failed {name}/{pin}')
     def binary(cls,a,c):
         e=expr(cls);link(a,e,'A');link(c,e,'B');return e
